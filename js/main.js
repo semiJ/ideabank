@@ -162,6 +162,15 @@ $(function(){
         };
     })
 
+    //클릭 시 이미지 띄우기
+        $(".honey").on("click", function(){
+
+            i = $(this).index();
+
+            $(".designDetail li").addClass("designOn");
+            $(".designDetail li").removeClass("designOn");
+        })
+
     // 스크롤 시 top 버튼 노출
 
     $(window).on("scroll", function(){
