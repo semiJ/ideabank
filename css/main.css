@@ -254,6 +254,12 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+
+    .infoview {
+        opacity: 1;
+        transition: 4s;
     }
 
     .myInfo li {
@@ -316,6 +322,11 @@
         margin-left: 120px;
     }
 
+    .diligentani {
+        transform: rotateY(360deg);
+        transition: 2s;
+    }
+
     .sub_diligent span {
         color: #FFA557;
     }
@@ -356,8 +367,9 @@
 
     .biview {
         opacity: 1;
-        transition: opacity 0.8s ease;
+        transition: 4s;
     }
+
 
 
     /* bi_right */
@@ -371,6 +383,11 @@
     .bi_img_main {
         width: 30%;
         margin-left: 200px;
+    }
+
+    .imgview {
+        transform: translate(-20px);
+        transition: 2s;
     }
 
     .bi_img img {
@@ -486,15 +503,23 @@
         margin: 20px 0px;
     }
 
+    .pofol.pofol_active {
+        opacity: 1;
+        position: absolute;
+        top: 100px;
+        transition: 1.5s;
+    }
+
     .pofol_num span {
         font-size: 16px;
         opacity: 0;
     }
 
     .cpofol_title {
-        /* opacity: 1; */
+        opacity: 1;
         transform: translate(-20px);
         transition: 1s;
+        color: #0095FF;
     }
 
     .pofol {
@@ -512,14 +537,29 @@
     }
 
     .pofol_active {
-        z-index: 2;
         opacity: 1;
+    }
+
+    .pofol_one.pofol_active {
+        top: 70px; 
+    }
+
+    .pofol_tow.pofol_active {
+        top: 150px; 
+    }
+
+    .pofol_three.pofol_active {
+        top: 230px; 
+    }
+
+    .pofol_four.pofol_active {
+        top: 310px; 
     }
 
     .pofol_one {
         position: absolute;
         left: 50%;
-        top: 800px;
+        top: 500px;
         transform: translateX(-50%);
         z-index: 1;
     }
@@ -528,7 +568,7 @@
     .pofol_tow {
         position: absolute;
         left: 50%;
-        top: 890px; 
+        top: 600px; 
         transform: translateX(-50%);
         z-index: 2;
     }
@@ -537,7 +577,7 @@
     .pofol_three {
         position: absolute;
         left: 50%;
-        top: 890px;
+        top: 700px;
         transform: translateX(-50%);
         z-index: 3;
     }
@@ -546,7 +586,7 @@
     .pofol_four {
         position: absolute;
         left: 50%;
-        top: 890px;
+        top: 800px;
         transform: translateX(-50%);
         z-index: 4;
     }
@@ -696,7 +736,7 @@
 
     .dsgview {
         opacity: 1;
-        transform:  rotateY(180deg) translateY(40px);
+        transform:  rotateY(360deg) translateY(40px);
         transition: 3s;
     }
 
@@ -770,12 +810,32 @@
         background-size: cover;
     }
 
+    .designDetail {
+        /* opacity: 0; */
+        display: flex;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .designDetail img {
+        width: 400px;
+        height: ;
+    }
+
+    .designDetail .designOn {
+        opacity: 1;
+    }
+
     
 
     /* footer */
     footer {
         width: 100%;
-        height: 100vh;
+        height: 50vh;
         background-color: #FFDA7C;
     }
 
