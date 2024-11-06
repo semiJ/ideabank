@@ -717,6 +717,10 @@
         position: relative;
     }
 
+    .six li {
+        cursor: pointer;
+    }
+
     .honey {
         text-indent: -99999px;
     }
@@ -818,7 +822,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
         overflow: hidden;
-        opacity: 0;
+        display: none;
     }
 
     .designDetail {
@@ -888,10 +892,19 @@
         background-position: center;
     }
 
-    
-
     .designDetail .designOn {
         opacity: 1;
+    }
+    
+    .idb_Back {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: red;
+        /* background: rgba(0, 0, 0, 0.8); */
+        z-index: 20;
+        /* display: none; */
+        text-indent: -9999px;
     }
 
     .pofol_navi {
@@ -901,6 +914,7 @@
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
+        z-index: 3;
     }
     
     .pofol_navi li {

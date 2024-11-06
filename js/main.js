@@ -1,8 +1,5 @@
 $(function(){
-    // 페이지 변경
-
     // visual 웹퍼블리셔, 이름 노출
- 
     $(".v_job span:nth-child(1)").stop().animate({"opacity":"1", "transform": "translateX(-5px)"}, 200, function(){
         $(".v_job span:nth-child(2)").stop().animate({"opacity":"1", "transform": "translateX(-5px)"}, 200, function(){
             $(".v_job span:nth-child(3)").stop().animate({"opacity":"1", "transform": "translateX(-5px)"}, 200, function(){
@@ -15,13 +12,23 @@ $(function(){
         });
     });
 
+    // offset
+    let baseline = -400;
+
+    let aBoutme = $("#container .aBoutme").offset().top + baseline;
+    let bi = $("#container .bi").offset().top + baseline;
+    let portfolio = $("#container .portfolio").offset().top + baseline;
+    let design = $("#container .design").offset().top + baseline;
+
+    
+
     //aboutme
 
     $(window).on("scroll", function(){
         let abou = $(this).scrollTop();
         console.log(abou); // 스크롤 위치 확인
 
-        if(abou >= 200 && abou < 1600) {
+        if(abou >= aBoutme && abou < bi) {
             $(".myInfo").addClass("infoview");
         } else {
             $(".myInfo").removeClass("infoview");
@@ -32,7 +39,7 @@ $(function(){
         let abou = $(this).scrollTop();
         // console.log(abou); // 스크롤 위치 확인
 
-        if(abou >= 200 && abou < 1600) {
+        if(abou >= aBoutme && abou < bi) {
             $(".diligent").addClass("diligentani");
         } else {
             $(".diligent").removeClass("diligentani");
@@ -45,7 +52,7 @@ $(function(){
         let viewimg = $(this).scrollTop();
         // console.log(viewimg); // 스크롤 위치 확인
 
-        if(viewimg >= 1200 && viewimg < 2600) {
+        if(viewimg >= bi && viewimg < portfolio) {
             $(".bi_detail").addClass("biview");
         } else {
             $(".bi_detail").removeClass("biview");
@@ -56,7 +63,7 @@ $(function(){
         let viewimg = $(this).scrollTop();
         // console.log(viewimg); // 스크롤 위치 확인
 
-        if(viewimg >= 1200 && viewimg < 2600) {
+        if(viewimg >= bi && viewimg < portfolio) {
             $(".bi_img_main").addClass("imgview");
         } else {
             $(".bi_img_main").removeClass("imgview");
@@ -70,6 +77,13 @@ $(function(){
 
         let pofolTop = $(this).scrollTop();
         console.log(pofolTop);
+
+        // if(pofolTop >= portfolio && pofolTop < design){
+        //     $(".portfolio .pofol_one").addClass("pofol_active");
+        //     $(".portfolio .pofol_one").removeClass("pofol_active");
+        // } else if(pofolTop >= portfolio && pofolTop < design){
+        //     $(".portfolio .pofol_one").addClass("pofol_active");
+        // }
 
         if(pofolTop >= 2150) {
             $(".portfolio .pofol_one").addClass("pofol_active");   
@@ -100,15 +114,15 @@ $(function(){
     $(".portfolio .pofol_num li").on("click", function(){
         i = $(this).index();
 
-        $(".portfolio .pofol").removeClass("pofol_active")
-        $(".portfolio .pofol").eq(i).addClass("pofol_active")
+        $(".portfolio .pofol").removeClass("pofol_active");
+        $(".portfolio .pofol").eq(i).addClass("pofol_active");
     });
 
     $().on("clik", function(){
         i = $(this).index();
 
-        $(".portfolio .pofol").removeClass("pofol_active")
-        $(".portfolio .pofol").eq(i).addClass("pofol_active")
+        $(".portfolio .pofol").removeClass("pofol_active");
+        $(".portfolio .pofol").eq(i).addClass("pofol_active");
     })
 
 
@@ -164,12 +178,14 @@ $(function(){
 
     //클릭 시 이미지 띄우기
         $(".honey").on("click", function(){
-
             i = $(this).index();
+            $(".designSlide").css({"display":"block"});
+        });
 
-            $(".designDetail li").addClass("designOn");
-            $(".designDetail li").removeClass("designOn");
-        })
+        // $(".design").on("click", function(){
+        //     i = $(this).index();
+        //     $(".designSlide").css({"display":"none"});
+        // });
 
     // 스크롤 시 top 버튼 노출
 
