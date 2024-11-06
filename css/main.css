@@ -823,7 +823,8 @@
 
     .designDetail img {
         width: 400px;
-        height: ;
+        height: 600px;
+        object-fit: cover;
     }
 
     .designDetail .designOn {
