@@ -13,7 +13,7 @@ $(function(){
     });
 
     // offset
-    let baseline = -400;
+    let baseline = -200;
 
     let aBoutme = $("#container .aBoutme").offset().top + baseline;
     let bi = $("#container .bi").offset().top + baseline;
@@ -26,7 +26,7 @@ $(function(){
 
     $(window).on("scroll", function(){
         let abou = $(this).scrollTop();
-        console.log(abou); // 스크롤 위치 확인
+        // console.log(abou); // 스크롤 위치 확인
 
         if(abou >= aBoutme && abou < bi) {
             $(".myInfo").addClass("infoview");
@@ -76,7 +76,7 @@ $(function(){
     $(window).on("scroll", function(){
 
         let pofolTop = $(this).scrollTop();
-        console.log(pofolTop);
+        // console.log(pofolTop);
 
         // if(pofolTop >= portfolio && pofolTop < design){
         //     $(".portfolio .pofol_one").addClass("pofol_active");
@@ -118,11 +118,11 @@ $(function(){
         $(".portfolio .pofol").eq(i).addClass("pofol_active");
     });
 
-    $().on("clik", function(){
+    $(".pofol_num li").on("click", function(){
         i = $(this).index();
 
-        $(".portfolio .pofol").removeClass("pofol_active");
-        $(".portfolio .pofol").eq(i).addClass("pofol_active");
+        $(".pofol_num li span").removeClass("pofol_title");
+        $(".pofol_num li span").eq(i).addClass("pofol_title");
     })
 
 
@@ -177,15 +177,19 @@ $(function(){
     })
 
     //클릭 시 이미지 띄우기
-        $(".honey").on("click", function(){
-            i = $(this).index();
-            $(".designSlide").css({"display":"block"});
-        });
+    $(".six .honey").on("click", function(){
+        $(".designSlide").show();
+        i = $(this).index();
+        $(".designDetail li").removeClass("designOn");
+        $(".designDetail li").eq(i).addClass("designOn");
+    });
 
-        // $(".design").on("click", function(){
-        //     i = $(this).index();
-        //     $(".designSlide").css({"display":"none"});
-        // });
+    $(".designSlide .pofol_close").on("click", function(){
+        $(".designSlide").hide();
+        i = $(this).index();
+        $(".designDetail li").removeClass("designOn");
+        $(".designDetail li").eq(i).addClass("designOn");
+    });
 
     // 스크롤 시 top 버튼 노출
 

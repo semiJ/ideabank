@@ -492,6 +492,7 @@
         position: absolute;
         left: 50px;
         top: 400px;
+        z-index: 5;
     }
 
     .pofol_num li {
@@ -507,7 +508,7 @@
         opacity: 1;
         position: absolute;
         top: 100px;
-        transition: 1.5s;
+        transition: 2s;
     }
 
     .pofol_num span {
@@ -515,9 +516,9 @@
         opacity: 0;
     }
 
-    .cpofol_title {
+    .pofol_num span.pofol_title {
         opacity: 1;
-        transform: translate(-20px);
+        transform: translateX(-20px);
         transition: 1s;
         color: #0095FF;
     }
@@ -534,6 +535,7 @@
         box-sizing: border-box;
         overflow: hidden;
         opacity: 0;
+        position: fixed;
     }
 
     .pofol_active {
@@ -741,7 +743,7 @@
     .dsgview {
         opacity: 1;
         transform:  rotateY(360deg) translateY(40px);
-        transition: 3s;
+        transition: 2s;
     }
 
     .hexagon {
@@ -822,23 +824,40 @@
         top: 50%;
         transform: translate(-50%, -50%);
         overflow: hidden;
+        cursor: pointer;
         display: none;
     }
 
     .designDetail {
-        width: 700%;
+        width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
-        position: absolute;
+        position: relative;
         left: 0px;
         top: 0px;
     }
 
     .designDetail li {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 0%;
+        height: 0%;
+    }
+
+    .designDetail li.designOn {
         width: 100%;
         height: 100%;
-        opacity: 0;
+    }
+
+    .pofol_close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        color: #333;
+        font-size: 20px;
+        z-index: 3;
     }
 
     .designDetail li:nth-child(1){
@@ -846,7 +865,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        
     }
 
     .designDetail li:nth-child(2){
@@ -854,7 +872,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        
     }
 
     .designDetail li:nth-child(3){
@@ -891,22 +908,6 @@
         background-size: cover;
         background-position: center;
     }
-
-    .designDetail .designOn {
-        opacity: 1;
-    }
-    
-    .idb_Back {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        background-color: red;
-        /* background: rgba(0, 0, 0, 0.8); */
-        z-index: 20;
-        /* display: none; */
-        text-indent: -9999px;
-    }
-
     .pofol_navi {
         position: absolute;
         left: 50%;
@@ -943,6 +944,8 @@
     .pofol_next {
         right: 20px;
     }
+
+    
 
     /* footer */
     footer {
